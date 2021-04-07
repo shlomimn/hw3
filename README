@@ -1,0 +1,12 @@
+PORT FORWORD <LOCAL PORT>:<NGINX PORT 80>
+kubectl port-forward nginx-secret-user 8888:80
+kubectl port-forward nginx-secret-pass 8889:80
+kubectl port-forward nginx-secret-url 8890:80
+
+TEST WITH CURL
+curl http://127.0.0.1:8888/db-user
+curl http://127.0.0.1:8889/db-pass
+curl http://127.0.0.1:8890/db-url
+
+RUN MINIKUBE INGRESS
+minikube addons enable ingress
